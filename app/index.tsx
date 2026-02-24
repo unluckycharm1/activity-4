@@ -2,11 +2,72 @@ import React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function ProfilePage() {
+const name = "Benedic Brian Mangaron";
+
+export default function Index() {
   return (
-    <View>
-    <Text>Profile Page here</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView contentContainerStyle={styles.container}>
+          
+          <Image source={require("../assets/pic.jpg")} style={styles.image} />
+
+         
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.bio}>
+            Loves gaming and aspiring full stack web developer
+          </Text>
+
+          
+          <View style={styles.section}>
+            <Text style={styles.title}>About</Text>
+            <Text style={styles.text}>
+              Passionate about learning new technologies and building mobile and
+              web applications.
+            </Text>
+          </View>
+
+          
+          <View style={styles.section}>
+            <Text style={styles.title}>Interests</Text>
+            <Text style={styles.text}>• Mobile Development</Text>
+            <Text style={styles.text}>• Web Development</Text>
+            <Text style={styles.text}>• Gaming</Text>
+          </View>
+
+          
+          <View style={styles.section}>
+            <Text style={styles.title}>Courses</Text>
+
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>
+                MOBILE APPLICATIONS DEVELOPMENT
+              </Text>
+              <Text>Build mobile apps</Text>
+            </View>
+
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>
+                APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES
+              </Text>
+              <Text>
+                Application development is the structured process of designing,
+                coding, testing, and deploying software
+              </Text>
+            </View>
+
+            <View style={styles.card}>
+              <Text style={styles.cardTitle}>IS PROJECT MANAGEMENT</Text>
+              <Text>
+                Project management is the structured process of planning,
+                organizing, and executing tasks to achieve specific goals within
+                defined constraints of time, budget, and scope
+              </Text>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -15,5 +76,50 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: "center",
   },
- 
+
+  image: {
+    width: 150,
+    height: 150,
+    borderRadius: 100,
+    marginBottom: 15,
+  },
+
+  name: {
+    fontSize: 26,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  bio: {
+    textAlign: "center",
+    marginVertical: 10,
+    color: "gray",
+  },
+
+  section: {
+    marginTop: 25,
+    width: "100%",
+  },
+
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+
+  text: {
+    marginBottom: 4,
+  },
+
+  card: {
+    borderRadius: 15,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    padding: 12,
+    marginTop: 10,
+  },
+
+  cardTitle: {
+    fontWeight: "bold",
+  },
 });
